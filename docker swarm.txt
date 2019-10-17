@@ -1,0 +1,78 @@
+Docker swarm:
+	swarm is a group machaines are running in docker and join in to cluster.
+swarm is atool for container orchestration
+- helth checks on every container
+- ensure all containers are up on every system
+- scalling the container up or down depending on the load
+- adding updates/changes to all containers.
+
+# docker swarm init
+take join command paste in node 
+# docker node ls
+ 
+# docker service create --replicas 5 -p 80:80  --name web nginx
+# docker service create --replicas 2 -p 8080:8080  --name myweb jenkins
+
+##if we need token commands for node and master to join cluster
+# docker swarm join-token manager
+# docker swarm join-token worker
+
+scalling:
+========
+# docker service ls
+# docker service ps web
+# docker service scale web=8
+# docker service ls
+
+scaledown:
+==========
+# docker service ls
+# docker service scale web=2
+# docker service ls
+# docker service ps web
+# docker ps
+
+# docker node ps node1
+# docker node ps node2
+
+Inspecting nodes:
+=================
+# docker node inspect self
+# docker node inspect node1
+# docker node inspect — pretty node1
+# docker node inspect — pretty self
+
+
+Draining a node:
+================
+# docker node ls
+# docker service ps web
+# docker node update --availability drain node1
+# docker service ps web
+
+
+Active drine nodes:
+==================
+# docker node ls 
+# docker node update --availability active node1
+# docker node ls
+
+
+service rm:
+===========
+# docker service ps web
+# docker service rm web
+#  docker service ls
+# docker service update --image <imagename>:<version> web
+
+
+
+
+
+
+
+
+
+
+
+
