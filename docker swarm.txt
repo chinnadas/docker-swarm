@@ -17,15 +17,26 @@ take join command paste in node
 # docker swarm join-token manager
 # docker swarm join-token worker
 
-scalling:
-========
+Change Hostname:
+================
+# hostnamectl set-hostname "Master"
+# exe bash
+
+# hostnamectl set-hostname "worker-1"
+# exe bash
+
+# hostnamectl set-hostname "worker-2"
+# exe bash
+
+scalling up:
+===========
 # docker service ls
 # docker service ps web
 # docker service scale web=8
 # docker service ls
 
-scaledown:
-==========
+scale down:
+===========
 # docker service ls
 # docker service scale web=2
 # docker service ls
@@ -39,8 +50,9 @@ Inspecting nodes:
 =================
 # docker node inspect self
 # docker node inspect node1
-# docker node inspect — pretty node1
+
 # docker node inspect — pretty self
+# docker node inspect — pretty node1
 
 
 Draining a node:
@@ -64,16 +76,3 @@ service rm:
 # docker service rm web
 #  docker service ls
 # docker service update --image <imagename>:<version> web
-
-
-
-Change Hostname:
-================
-# hostnamectl set-hostname "Master"
-# exe bash
-
-# hostnamectl set-hostname "worker-1"
-# exe bash
-
-# hostnamectl set-hostname "worker-2"
-# exe bash
