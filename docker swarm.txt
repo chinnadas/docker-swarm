@@ -67,12 +67,13 @@ service rm:
 
 
 
+Change Hostname:
+================
+# hostnamectl set-hostname "Master"
+# exe bash
 
+# hostnamectl set-hostname "worker-1"
+# exe bash
 
-
-
-
-
-
-
-
+# hostnamectl set-hostname "worker-2"
+# exe bash
