@@ -10,10 +10,13 @@ swarm is atool for container orchestration
 take join command paste in node 
 # docker node ls
  
+ service create:
+ ===============
 # docker service create --replicas 5 -p 80:80  --name web nginx
 # docker service create --replicas 2 -p 8080:8080  --name myweb jenkins
 
-##if we need token commands for node and master to join cluster
+Generate Token:
+================
 # docker swarm join-token manager
 # docker swarm join-token worker
 
