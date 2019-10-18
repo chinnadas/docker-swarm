@@ -75,4 +75,16 @@ service rm:
 # docker service ps web
 # docker service rm web
 #  docker service ls
-# docker service update --image <imagename>:<version> web
+
+service update images:
+======================
+# docker service ls (nginx:latest)
+# docker service update --image nginx:1.17 web
+
+service rollbacks:
+==================
+# docker service create --name my-service -p 8080:80 nginx:alpine
+# docker service ls
+# docker service update --replicas=3 my-service
+# docker service ls
+# docker service rollback my-service
